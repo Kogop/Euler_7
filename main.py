@@ -23,7 +23,7 @@ def num_of_easy_number(n):
         temp_list = []
         if len(list_of_easy_numbers) == n:
             break
-        j += 1
+        j += 2
     return list_of_easy_numbers[-1]
 
 
