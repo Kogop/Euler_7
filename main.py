@@ -5,24 +5,25 @@
 
 def num_of_easy_number(n):
     list_of_easy_numbers = [2]
+    temp_list = []
+    counter = 0
+    j = 3
     while len(list_of_easy_numbers) < n:
-        for j in range(2, 99999999999999999):
-            for i in list_of_easy_numbers:      #добавить счетчик чтобы считал что простое число не делиться на другие простые числа
-                                                # и если не делится на остальные простые, то только тогда его можно записывать
-                                                # логично же? похуй, 3 ночи, завтра додумаю
-                if j % i != 0:
-                    print(j % i)
-                    if list_of_easy_numbers.count(j) == 0:  # число должно добавляться только если оно не делится на каждое из чисел из списка
-                        for k in list_of_easy_numbers:
-                            j % list_of_easy_numbers[k]
-
-                        list_of_easy_numbers.append(j)
-                        break
-                if len(list_of_easy_numbers) == n:
-                    break
-            if len(list_of_easy_numbers) == n:
+        for i in list_of_easy_numbers:  # добавить счетчик чтобы считал что простое число не делиться на другие простые числа
+            temp_list.append(j % i)                            # и если не делится на остальные простые, то только тогда его можно записывать
+        for o in range(0, len(temp_list)):                                 # логично же? похуй, 3 ночи, завтра додумаю
+            if temp_list[o] == 0:
                 break
-
+            else:
+                counter += 1
+            if counter == len(temp_list):
+                #print(j)
+                list_of_easy_numbers.append(j)
+        counter = 0
+        temp_list = []
+        if len(list_of_easy_numbers) == n:
+            break
+        j += 1
     return list_of_easy_numbers[-1]
 
 
