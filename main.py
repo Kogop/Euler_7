@@ -9,9 +9,9 @@ def num_of_easy_number(n):
     counter = 0
     j = 3
     while len(list_of_easy_numbers) < n:
-        for i in list_of_easy_numbers:  # добавить счетчик чтобы считал что простое число не делиться на другие простые числа
-            temp_list.append(j % i)                            # и если не делится на остальные простые, то только тогда его можно записывать
-        for o in range(0, len(temp_list)):                                 # логично же? похуй, 3 ночи, завтра додумаю
+        for i in list_of_easy_numbers:
+            temp_list.append(j % i)
+        for o in range(0, len(temp_list)):
             if temp_list[o] == 0:
                 break
             else:
